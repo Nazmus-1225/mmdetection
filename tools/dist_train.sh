@@ -13,6 +13,7 @@ python -m torch.distributed.launch \
     --node_rank=$NODE_RANK \
     --master_addr=$MASTER_ADDR \
     --nproc_per_node=$GPUS \
+    --backend=gloo \
     --master_port=$PORT \
     $(dirname "$0")/train.py \
     $CONFIG \
